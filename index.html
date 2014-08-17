@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+<title>Anaerobic Methane Digestion FRQ </title>
+
+<link rel="shortcut icon" href="greenenergy.png">
+
+<!-- the background color is the color surrounding the worksheet-->
+
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-image:url('backgroundforADM.jpg');
+ }
+h1 {
+  margin-left: 20px;
+}
+
+h4 {
+  margin-left: 20px;
+}
+
+div#right { 
+    width: 400px;
+    float: right;  
+    margin: 10 5px;  
+    	font-size: 22px;
+ }
+ </style>
+
+
+<!-- I downloaded TwentyTen Wordpress theme - that is what the mathjax css is based on - and found the css for the show/hide buttons using the inspect element feature, then copied it here-->
+<style type="text/css" id="input">
+#content input,
+#content textarea {
+  color: #F2072E;
+  font-weight: bold;
+}
+
+</style>
+
+</head>
+
+
+
+<body class="page page-id-612 page-child parent-pageid-13 page-template-default custom-background">
+     <h1 class="entry-title">Anaerobic Digeston of Manure to Yield Methane</h1>
+     <h4><i>Enjoy mousing around the Collision Detection interactive and then click on the countries to the right for some energy math practice!</i></h4>
+
+<div id="right">
+<a target="_blank" href="AMDUSA.html">USA</a>
+<br/><br/>
+<br/>
+<a target="_blank" href="AMDCanada.html">Canada</a>
+<br/><br/>
+<br/>
+<a target="_blank" href="AMDGreece.html">Greece</a>
+<br/><br/>
+<br/>
+<a target="_blank" href="AMDSpain.html">Spain</a>
+<br/><br/>
+<br/>
+<a target="_blank" href="AMDFrance.html">France</a>
+<br/><br/>
+<br/>
+</div>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = 800,
+    height = 500;
+
+var nodes = d3.range(200).map(function() { return {radius: Math.random() * 12 + 4}; }),
+    root = nodes[0],
+    color = d3.scale.category10();
+
+root.radius = 0;
+root.fixed = true;
+
+var force = d3.layout.force()
+    .gravity(0.05)
+    .charge(function(d, i) { return i ? 0 : -2000; })
+    .nodes(nodes)
+    .size([width, height]);
+
+force.start();
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.selectAll("circle")
+    .data(nodes.slice(1))
+  .enter().append("circle")
+    .attr("r", function(d) { return d.radius; })
+    .style("fill", function(d, i) { return color(i % 3); });
+
+force.on("tick", function(e) {
+  var q = d3.geom.quadtree(nodes),
+      i = 0,
+      n = nodes.length;
+
+  while (++i < n) q.visit(collide(nodes[i]));
+
+  svg.selectAll("circle")
+      .attr("cx", function(d) { return d.x; })
+      .attr("cy", function(d) { return d.y; });
+});
+
+svg.on("mousemove", function() {
+  var p1 = d3.mouse(this);
+  root.px = p1[0];
+  root.py = p1[1];
+  force.resume();
+});
+
+function collide(node) {
+  var r = node.radius + 16,
+      nx1 = node.x - r,
+      nx2 = node.x + r,
+      ny1 = node.y - r,
+      ny2 = node.y + r;
+  return function(quad, x1, y1, x2, y2) {
+    if (quad.point && (quad.point !== node)) {
+      var x = node.x - quad.point.x,
+          y = node.y - quad.point.y,
+          l = Math.sqrt(x * x + y * y),
+          r = node.radius + quad.point.radius;
+      if (l < r) {
+        l = (l - r) / l * .5;
+        node.x -= x *= l;
+        node.y -= y *= l;
+        quad.point.x += x;
+        quad.point.y += y;
+      }
+    }
+    return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+  };
+}
+
+</script>
+
+</body>
+<br></br>
+<p style="font-size:small; color:gray; text-align:center;">
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">APES Practice for Energy Math</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
+<br/>
+This software incorporates the MathJax TEX and CSS libraries, the JQuery
+Google API, and D3.js.
+<br>"Collision Detection" interactive is adapted from http://bl.ocks.org/mbostock/3231298 (Copyright (c) 2010-2014, Michael Bostock. All rights reserved).
+</html>
