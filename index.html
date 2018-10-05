@@ -11,9 +11,18 @@
 
 <!-- the background color is the color surrounding the worksheet-->
 
-<style type="text/css" id="custom-background-css">
-body.custom-background { background-image:url('backgroundforADM.jpg');
+<style>
+
+body { 
+  background-image:url('backgroundforADM.jpg');
  }
+
+#content input,
+#content textarea {
+  color: #F2072E;
+  font-weight: bold;
+}
+
 h1 {
   margin-left: 20px;
 }
@@ -22,32 +31,27 @@ h4 {
   margin-left: 20px;
 }
 
-div#right { 
-    width: 400px;
-    float: right;  
-    margin: 10 5px;  
-    	font-size: 22px;
+#right { 
+    width: 100px;
+    margin-left: 20px;
+    float: left;      	
+    font-size: 20px;
  }
+
+ .below {
+  z-index: -100;
+ }
+
  </style>
-
-
-<!-- I downloaded TwentyTen Wordpress theme - that is what the mathjax css is based on - and found the css for the show/hide buttons using the inspect element feature, then copied it here-->
-<style type="text/css" id="input">
-#content input,
-#content textarea {
-  color: #F2072E;
-  font-weight: bold;
-}
-
-</style>
 
 </head>
 
 
 
-<body class="page page-id-612 page-child parent-pageid-13 page-template-default custom-background">
-     <h1 class="entry-title">Anaerobic Digeston of Manure to Yield Methane</h1>
-     <h4><i>Enjoy mousing around the Collision Detection interactive and then click on the countries to the right for some energy math practice!</i></h4>
+<body>
+<h1 class="entry-title">Anaerobic Digeston of Manure to Yield Methane</h1>
+<h4><i>Enjoy mousing around the Collision Detection interactive and then click on the countries below for some energy math practice!</i></h4>
+
 
 <div id="right">
 <a target="_blank" href="AMDUSA.html">USA</a>

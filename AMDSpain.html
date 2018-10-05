@@ -9,121 +9,19 @@
 
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="shortcut icon" href="greenenergy.png">
-<link rel="stylesheet" type="text/css" media="all" href="http://www.mathjax.org/wp-content/themes/mathjax/style.css" />
+<link rel="stylesheet" type="text/css" href="styles.css">
 
-<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shCore.js'></script>
-<script type='text/javascript' src='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/scripts/shAutoloader.js'></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
-
-<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shCore.css'/>
-<link type='text/css' rel='stylesheet' href='http://www.mathjax.org/wp-content/plugins/syntax-highlighter-mt/styles/shThemeDefault.css'/>
-
-
-<!-- the background color is the color surrounding the worksheet-->
-
-<style type="text/css" id="custom-background-css">
-body.custom-background { 
-    background-image:url('backgroundforADM.jpg');
- }
-
-#content {
-margin: 0 auto;
-}
-</style>
-
-
-<style type="text/css" id="math-header-css">
-.math-header, .section-header {
-    margin-left: 40px;
-    display: inline-block;
-    background: #afeb10;
-    border-top: 1px solid #ccc;
-    border-radius: 15px;
-    color: ##FFBF00;
-    font-family: "Helvetica Neue", Arial, Helvetica, "Nimbus Sans L", sans-serif;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding: 10px;
-    text-shadow: 0 0 0
-}
-
-</style>
-
-<!-- I downloaded TwentyTen Wordpress theme - that is what the mathjax css is based on - and found the css for the show/hide buttons using the inspect element feature, then copied it here-->
-<style type="text/css" id="input">
-#content input,
-#content textarea {
-  color: #F2072E;
-  font-weight: bold;
-  font-size: 30px;
-}
-
-.writing {
-    width: 600px;
-    border-radius: 15px;
-    margin-left: 40px;
-    background: white;
-    opacity: 0.7;
-    display: inline-block;
-    padding: 10px;
-}
-
-.list {
-    line-height: 30px;
-    background: white;
-    list-style-position: inside;
-    opacity: 0.7;
-    width: 600px;
-    padding-left: 10px;
-    padding-right: 10px;
-
-}
-
-#topitem {
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-}
-
-#bottomitem {
-  border-bottom-left-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-
-.showhideall {
-    background: white;
-    opacity: 0.7;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: inline-block;
-    margin-left: 300px;
-
-}
-
-input {
-  margin-left: 40px;
-}
-
-.end {
-    background: white;
-    border-radius: 15px;
-    width: 800px;
-    margin: 0 auto;
-    opacity: 0.7;
-    padding: 10px;
-
-
-}
-
-</style>
-
-
-<script>
-$(document).ready(function() {
-  $('showhide').hide();
-});
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous">
 </script>
 
 <script type="text/javascript">
+
+$(document).ready(function() {
+  $('.showhideall').hide();
+});
 
 /**
  * Returns a random number between min and max
@@ -153,6 +51,16 @@ function digits (number) {
     return number.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"); 
 }
 
+var countryis = "Spain";
+var cowsonfarm = 250;
+var costofdigester = 500000;
+var kwhelectricityperyear = 600000;
+var costperkwh = .25;
+var answertoproblem1 = (3*cowsonfarm*365);
+var answertoproblem2 = (answertoproblem1*costperkwh);
+var answertoproblem3 = Math.round(costofdigester/answertoproblem2);
+var answertoproblem4 = Math.round(kwhelectricityperyear/365/3);
+
 </script>
 
 <script type="text/x-mathjax-config">
@@ -171,34 +79,14 @@ function digits (number) {
 
 
 
-<body class="page page-id-612 page-child parent-pageid-13 page-template-default custom-background">
+<body>
+<div id="content">
 
-<br>
-
-<div id="main">
- <div id="container">
-  <div id="content" role="main">
-    <div id="post-612" class="post-612 page type-page status-publish hentry">
-
-<div class="showhide" id="showhide">
-     <h1 class="writing">Anaerobic Digeston of Manure to Yield Methane</h1>
+<h1 class="writing">Anaerobic Digeston of Manure to Yield Methane</h1>
 <br/>
-<script>
-  
-var countryis = "Spain";
-var cowsonfarm = 250;
-var costofdigester = 500000;
-var kwhelectricityperyear = 600000;
-var costperkwh = .25;
-var answertoproblem1 = (3*cowsonfarm*365);
-var answertoproblem2 = (answertoproblem1*costperkwh);
-var answertoproblem3 = Math.round(costofdigester/answertoproblem2);
-var answertoproblem4 = Math.round(kwhelectricityperyear/365/3);
-      
-</script>
 
   
-  <p class="writing">Anaerobic methane digesters has been used for years to reduce energy costs on farms in Europe and North America. The digesters operate by using anaerobic bacteria to break down animal waste. During the process, which typically uses a tank heated to about 100°F (38°C) to speed the reactions, raw manure is broken down and methane is produced. The methane can then be used to generate electricity or produce heat.</p> 
+  <p class="writing">Anaerobic methane digesters has been used for years to reduce energy costs on farms in Europe and North America. The digesters operate by using anaerobic bacteria to break down animal waste. During the process, which typically uses a tank heated to about 100&#8457; (38&#8451;) to speed the reactions, raw manure is broken down and methane is produced. The methane can then be used to generate electricity or produce heat.</p> 
   <br>
   <p class="writing">For a dairy farm in <b><script>document.write(countryis)</script></b> with <b><script>document.write(cowsonfarm)</script></b> cows, the cost of installing a digester is approximately $<b><script>document.write(costofdigester.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"))</script></b>. Assume that the farm uses <b><script>document.write(kwhelectricityperyear.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,"))</script></b> kWh of electricity each year at a cost of $<b><script>document.write(costperkwh)</script></b> per kWh. The waste from a single cow can produce <b>3.0</b> kWh of electricity each day.  Assume that the cost of electricity remains constant and the farmer uses all of the manure from the cows in an anaerobic digester to produce electricity on the farm.</p>
  
@@ -209,11 +97,10 @@ var answertoproblem4 = Math.round(kwhelectricityperyear/365/3);
 <div class="math-header">Calculate the number of kWh of electricity that can be produced in one year on the farm in <script>document.write(countryis)</script> </div>
 <br>
 
-
-<input type="submit" name="hideh2" value="Hide Solution" id="hideh2" /> <input type="submit" name="showh2" value="Show Solutions" id="showh2" />
+<input type="button" class="show_hide1" value="Show answer" /> 
 
 <br/><br/>
-<div class="showhideall" id="showhide2">
+<div class="showhideall" id="showhide1">
 
  <script>
   document.write("\\[ \\left(3\\frac{\ kWh}{\ day/cow}\\right) \\times \\left("+cowsonfarm+"\\ cows\\right)\\times \\left(365\\frac{\ days}{\ year}\\right) = "+answertoproblem1.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\ kWh\\]");
@@ -222,15 +109,9 @@ var answertoproblem4 = Math.round(kwhelectricityperyear/365/3);
 </div>
 <script>
 
-$('#showhide2').hide(2600, function() {});
-
-
-$('#showh2').click(function() {
-  $('#showhide2').show('slow', function() {});
-});
-
-$('#hideh2').click(function() {
-  $('#showhide2').hide('slow', function() {});
+$('.show_hide1').click(function(){
+    $("#showhide1").toggle( "slow");
+    $(this).val( $(this).val() == 'Show answer' ? 'Hide answer' : 'Show answer' );
 });
 </script>
 
@@ -240,10 +121,10 @@ $('#hideh2').click(function() {
 </div>
 <br>
 
-<input type="submit" name="hideh3" value="Hide Solution" id="hideh3" /> <input type="submit" name="showh3" value="Show Solutions" id="showh3" />
+<input type="button" class="show_hide2" value="Show answer" /> 
 
 <br/><br/>
-<div class="showhideall" id="showhide3">
+<div class="showhideall" id="showhide2">
 
   
 <script>
@@ -253,15 +134,9 @@ $('#hideh2').click(function() {
   </div>
   <script>
 
-$('#showhide3').hide(2600, function() {});
-
-
-$('#showh3').click(function() {
-  $('#showhide3').show('slow', function() {});
-});
-
-$('#hideh3').click(function() {
-  $('#showhide3').hide('slow', function() {});
+$('.show_hide2').click(function(){
+    $("#showhide2").toggle( "slow");
+    $(this).val( $(this).val() == 'Show answer' ? 'Hide answer' : 'Show answer' );
 });
 </script>
   
@@ -272,10 +147,10 @@ $('#hideh3').click(function() {
 </div>
 <br>
 
-<input type="submit" name="hideh4" value="Hide Solution" id="hideh4" /> <input type="submit" name="showh4" value="Show Solutions" id="showh4" />
+<input type="button" class="show_hide3" value="Show answer" /> 
 
 <br/><br/>
-<div class="showhideall" id="showhide4">
+<div class="showhideall" id="showhide3">
 
 <script>
   document.write("\\[ \\left("+costofdigester.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\ dollars}{\ digester}\\right) \\div \\left("+answertoproblem2.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\ dollars}{\ yr}\\right) =\\ "+answertoproblem3.toPrecision(2)+"\\ years\\]");
@@ -285,15 +160,9 @@ $('#hideh3').click(function() {
 
   <script>
 
-$('#showhide4').hide(2600, function() {});
-
-
-$('#showh4').click(function() {
-  $('#showhide4').show('slow', function() {});
-});
-
-$('#hideh4').click(function() {
-  $('#showhide4').hide('slow', function() {});
+$('.show_hide3').click(function(){
+    $("#showhide3").toggle( "slow");
+    $(this).val( $(this).val() == 'Show answer' ? 'Hide answer' : 'Show answer' );
 });
 </script>
   
@@ -304,10 +173,10 @@ $('#hideh4').click(function() {
 </div>
 <br>
 
-<input type="submit" name="hideh5" value="Hide Solution" id="hideh5" /> <input type="submit" name="showh5" value="Show Solutions" id="showh5" />
+<input type="button" class="show_hide4" value="Show answer" /> 
 
 <br/><br/>
-<div class="showhideall" id="showhide5">
+<div class="showhideall" id="showhide4">
   
   <script>
   document.write("\\[ \\left("+kwhelectricityperyear.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,")+"\\frac{\ kWh}{\ yr}\\right) \\div \\left(365\\frac{\ days}{\ year}\\right) \\div \\left(3\\frac{\ kWh/day}{\ cow}\\right) =\\ "+answertoproblem4.toPrecision(3)+"\\ cows\\]");
@@ -317,18 +186,12 @@ $('#hideh4').click(function() {
 
   <script>
 
-$('#showhide5').hide(2600, function() {});
-
-
-$('#showh5').click(function() {
-  $('#showhide5').show('slow', function() {});
-});
-
-$('#hideh5').click(function() {
-  $('#showhide5').hide('slow', function() {});
+$('.show_hide4').click(function(){
+    $("#showhide4").toggle( "slow");
+    $(this).val( $(this).val() == 'Show answer' ? 'Hide answer' : 'Show answer' );
 });
 </script>
-
+</div>
 <br/><br/>
 <br/><br/>
 
