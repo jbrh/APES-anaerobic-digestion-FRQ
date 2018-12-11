@@ -15,12 +15,6 @@ body {
   background-image:url('backgroundforADM.jpg');
  }
 
-#content input,
-#content textarea {
-  color: #F2072E;
-  font-weight: bold;
-}
-
 h1 {
   margin-left: 20px;
 }
@@ -34,28 +28,41 @@ a {
   color: blue;
 }
 
-#right { 
+#left { 
     width: 100px;
     margin-left: 20px;
     float: left;      	
     font-size: 20px;
  }
 
- .below {
-  z-index: -100;
- }
+ .footer {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  text-align: center;
+  font-size:small; 
+  color:gray;
+  background: white;
+  border-radius: 15px;
+  width: 800px;
+  margin: 0 auto;
+  opacity: 0.5;
+  padding: 10px;
+}
 
- </style>
+ 
+
+
+</style>
 
 </head>
-
-
 
 <body>
 <h1 class="entry-title">Anaerobic Digestion of Manure to Yield Methane</h1>
 <h4><i>Enjoy mousing around the Collision Detection interactive and then click on the countries below for some energy math practice!</i></h4>
 
-<div id="right">
+<div id="left">
 <a target="_blank" href="AMDUSA.html">USA</a>
 <br/><br/>
 <br/>
@@ -148,14 +155,13 @@ function collide(node) {
   };
 }
 
-
 </script>
-</body>
-<br></br>
-<p style="font-size:small; color:gray; text-align:center;">
+<p class="footer">
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-nc-sa/3.0/80x15.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">APES Practice for Energy Math</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.physics.drexel.edu/~tim" property="cc:attributionName" rel="cc:attributionURL">Jenny Hoffman</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.
 <br/>
 This software incorporates the MathJax TEX and CSS libraries, the JQuery
 Google API, and D3.js.
 <br>"Collision Detection" interactive is adapted from http://bl.ocks.org/mbostock/3231298 (Copyright (c) 2010-2014, Michael Bostock. All rights reserved).
+</p>
+</body>
 </html>
